@@ -13,7 +13,7 @@ import java.awt.Color;
 public class Circulo extends D2 {
     public float raio;
 
-    public Circulo(Color cor, float x, float y, Color corInterna, boolean exibirArea, float raio) {
+    public Circulo(Color cor, int x, int y, Color corInterna, boolean exibirArea, float raio) {
         super(cor, x, y, corInterna, exibirArea);
         this.raio = raio;
     }

@@ -13,7 +13,7 @@ import java.awt.Color;
 public class Cilindro extends D3 {
     public float altura;
 
-    public Cilindro(Color cor, float x, float y, float altura) {
+    public Cilindro(Color cor, int x, int y, float altura) {
         super(cor, x, y);
         this.altura = altura;
     }

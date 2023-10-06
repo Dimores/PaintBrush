@@ -5,6 +5,7 @@
 package paintbrush;
 
 import java.awt.Color;
+import java.awt.Graphics;
 
 /**
  *
@@ -12,9 +13,9 @@ import java.awt.Color;
  */
 public abstract class D2 extends Ponto {
     public Color corInterna;
-    public boolean exibirArea;
+    public boolean exibirArea = false;
 
-    public D2(Color cor, float x, float y, Color corInterna, boolean exibirArea) {
+    public D2(Color cor, int x, int y, Color corInterna, boolean exibirArea) {
         super(cor, x, y);
         this.corInterna = corInterna;
         this.exibirArea = exibirArea;
@@ -22,5 +23,12 @@ public abstract class D2 extends Ponto {
     
     public abstract float area();
     public abstract float perimetro();
+    
+    @Override
+    public void desenhar(Graphics g){
+        if(exibirArea){
+            g.drawString(Float.toString(area()), x, y); // Amarramento tardio
+        }
+    }
     
 }

@@ -14,7 +14,7 @@ public class Piramide extends D3 {
     public float base;
     public float altura;
 
-    public Piramide(Color cor, float x, float y, float base, float altura) {
+    public Piramide(Color cor, int x, int y, float base, float altura) {
         super(cor, x, y);
         this.base = base;
         this.altura = altura;
