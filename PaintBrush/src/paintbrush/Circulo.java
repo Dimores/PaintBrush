@@ -5,18 +5,14 @@
 package paintbrush;
 
 import java.awt.Color;
+import java.awt.Graphics;
 
 /**
  *
  * @author diego
  */
 public class Circulo extends D2 {
-    public float raio;
-
-    public Circulo(Color cor, float x, float y, Color corInterna, boolean exibirArea, float raio) {
-        super(cor, x, y, corInterna, exibirArea);
-        this.raio = raio;
-    }
+    public int raio;
 
     @Override
     public float area() {
@@ -26,6 +22,14 @@ public class Circulo extends D2 {
     @Override
     public float perimetro() {
         return (float) (2 * Math.PI * raio);
+    }
+    
+    @Override
+    public void desenhar(Graphics g){
+        g.setColor(corInterna);
+        g.fillOval(x - raio, y - raio, 2 * raio, 2 * raio);
+        g.setColor(cor);
+        g.drawOval(x - raio, y - raio, 2 * raio, 2 * raio);
     }
     
 }

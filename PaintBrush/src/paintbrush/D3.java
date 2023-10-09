@@ -13,7 +13,7 @@ import java.awt.Color;
 public abstract class D3 extends Ponto {
     public float altura;
 
-    public D3(Color cor, float x, float y) {
+    public D3(Color cor, int x, int y) {
         super(cor, x, y);
     }
     

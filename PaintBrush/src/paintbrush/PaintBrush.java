@@ -14,7 +14,8 @@ public class PaintBrush {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        frmPaint tela = new frmPaint();
+        tela.setVisible(true);
     }
     
 }

@@ -15,11 +15,10 @@ import java.util.ArrayList;
 public class Poligono extends Ponto {
     public ArrayList<Ponto> lst; 
 
-    public Poligono(Color cor, float x, float y) {
+    public Poligono(Color cor, int x, int y) {
         super(cor, x, y);
     }
     
-    @Override
     public void desenhar(){
         // Desenhar o ponto aqui 
     }
