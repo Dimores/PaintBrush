@@ -14,6 +14,7 @@ import java.awt.Graphics;
 public abstract class D2 extends Ponto {
     public Color corInterna;
     public boolean exibirArea = false;
+    public boolean exibirPerimetro = false;
     
     public abstract float area();
     public abstract float perimetro();
@@ -21,7 +22,10 @@ public abstract class D2 extends Ponto {
     @Override
     public void desenhar(Graphics g){
         if(exibirArea){
-            g.drawString(Float.toString(area()), x, y); // Amarramento tardio
+            g.drawString("Área = " + Float.toString(area()), x - 20, y - 20); // Amarramento tardio
+        }
+        if(exibirPerimetro){
+            g.drawString("Perímetro = " + Float.toString(perimetro()), x - 30, y - 30); // Amarramento tardio
         }
     }
     

@@ -26,6 +26,11 @@ public class Ponto {
         this.x = x;
         this.y = y;
     }
+
+    Ponto(int x, int y) {
+        this.x = x;
+        this.y = y;
+    }
     
     public void desenhar(Graphics g){
         g.setColor(cor); // Setando a cor do ponto

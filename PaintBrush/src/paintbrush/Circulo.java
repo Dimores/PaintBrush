@@ -13,6 +13,7 @@ import java.awt.Graphics;
  */
 public class Circulo extends D2 {
     public int raio;
+    
 
     @Override
     public float area() {
@@ -30,6 +31,7 @@ public class Circulo extends D2 {
         g.fillOval(x - raio, y - raio, 2 * raio, 2 * raio);
         g.setColor(cor);
         g.drawOval(x - raio, y - raio, 2 * raio, 2 * raio);
+        super.desenhar(g);
     }
     
 }

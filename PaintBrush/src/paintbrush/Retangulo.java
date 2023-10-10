@@ -15,15 +15,11 @@ public class Retangulo extends D2 {
     public int base;
     public int largura;
 
-    public Retangulo(){
-        
-    }
-    
-
+    public Retangulo(){}
 
     @Override
     public float area() {
-        return this.base * this.largura;
+        return base * largura;
     }
 
     @Override
