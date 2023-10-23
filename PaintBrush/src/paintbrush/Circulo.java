@@ -12,24 +12,24 @@ import java.awt.Graphics;
  * @author diego
  */
 public class Circulo extends D2 {
-    public int raio;
+    public int raio; // Raio do circulo
     
 
     @Override
     public float area() {
-        return (float) (Math.PI * Math.pow(raio, 2));
+        return (float) (Math.PI * Math.pow(raio, 2)); // PI * R ^^ 2
     }
 
     @Override
     public float perimetro() {
-        return (float) (2 * Math.PI * raio);
+        return (float) (2 * Math.PI * raio); // 2 * PI * R
     }
     
     @Override
-    public void desenhar(Graphics g){
-        g.setColor(corInterna);
+    public void desenhar(Graphics g){ // Já tem cor externa
+        g.setColor(corInterna);   // Setando a cor interna
         g.fillOval(x - raio, y - raio, 2 * raio, 2 * raio);
-        g.setColor(cor);
+        g.setColor(cor); // Setando a cor externa
         g.drawOval(x - raio, y - raio, 2 * raio, 2 * raio);
         super.desenhar(g);
     }

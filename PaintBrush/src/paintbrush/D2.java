@@ -13,11 +13,11 @@ import java.awt.Graphics;
  */
 public abstract class D2 extends Ponto {
     public Color corInterna;
-    public boolean exibirArea = false;
+    public boolean exibirArea = false;     
     public boolean exibirPerimetro = false;
     
-    public abstract float area();
-    public abstract float perimetro();
+    public abstract float area(); // Função abstrata para calcular area
+    public abstract float perimetro(); // Função abstrata para calcular o perimetro
     
     @Override
     public void desenhar(Graphics g){

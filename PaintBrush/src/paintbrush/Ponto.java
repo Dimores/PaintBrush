@@ -12,11 +12,11 @@ import java.awt.Graphics;
  * @author diego
  */
 public class Ponto {
-    public Color cor;
-    public int x, y;
+    public Color cor; // Cor do ponto, cor interna.
+    public int x, y; // Posições no plano cartesinao
     
+    // Construtor sem parametros
     public Ponto(){
-
         
     }
 
@@ -27,7 +27,8 @@ public class Ponto {
         this.y = y;
     }
 
-    Ponto(int x, int y) {
+    // Construtor com as posições no plano cartesinao
+    public Ponto(int x, int y) {
         this.x = x;
         this.y = y;
     }

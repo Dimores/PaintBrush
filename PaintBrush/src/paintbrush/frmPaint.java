@@ -19,6 +19,9 @@ public class frmPaint extends javax.swing.JFrame {
     Circulo circulo;
     Borracha borracha;
     Poligono poligono;
+    Spray spray;
+    Cilindro cilindro;
+    Piramide piramide;
     
 
     /**
@@ -31,6 +34,10 @@ public class frmPaint extends javax.swing.JFrame {
         circulo = new Circulo();
         borracha = new Borracha();
         poligono = new Poligono();
+        spray = new Spray();
+        cilindro = new Cilindro();
+        piramide = new Piramide();
+        
     }
 
     /**
@@ -398,7 +405,7 @@ public class frmPaint extends javax.swing.JFrame {
 
     private void btnPiramideActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPiramideActionPerformed
         // TODO add your handling code here:
-        tipoFigura = TipoFigura.tfSpray;
+        tipoFigura = TipoFigura.tfPiramide;
 
     }//GEN-LAST:event_btnPiramideActionPerformed
 
@@ -427,8 +434,14 @@ public class frmPaint extends javax.swing.JFrame {
             poligono.adicionarPonto(evt.getX(), evt.getY());
             
             if( poligono.lstPontos.size() >= 3 && evt.getButton() == MouseEvent.BUTTON3){
-                poligono.desenhar(pnlPaint.getGraphics());
+                    poligono.desenhar(pnlPaint.getGraphics());
             }
+        }else if(tipoFigura == TipoFigura.tfCilindro){
+            cilindro.x = evt.getX();
+            cilindro.y = evt.getY();
+        }else if(tipoFigura == TipoFigura.tfPiramide){
+            piramide.x = evt.getX();
+            piramide.y = evt.getY();
         }
     }//GEN-LAST:event_pnlPaintMousePressed
 
@@ -469,6 +482,24 @@ public class frmPaint extends javax.swing.JFrame {
             circulo.corInterna = pnlCorInterna.getBackground();
             circulo.cor = pnlCorExterna.getBackground();
             circulo.desenhar(pnlPaint.getGraphics());
+        }else if(tipoFigura == TipoFigura.tfCilindro){
+            cilindro.X2 = evt.getX();
+            cilindro.Y2 = evt.getY();
+
+            cilindro.cor = pnlCorExterna.getBackground();
+            cilindro.corInterna = pnlCorInterna.getBackground();
+
+            cilindro.raio = (evt.getX()-cilindro.x)/2;
+
+            cilindro.desenhar(pnlPaint.getGraphics());
+        }else if(tipoFigura == TipoFigura.tfPiramide){
+            piramide.X2 = evt.getX();
+            piramide.Y2 = evt.getY();
+
+            piramide.cor = pnlCorExterna.getBackground();
+            piramide.corInterna = pnlCorInterna.getBackground();
+
+            piramide.desenhar(pnlPaint.getGraphics());
         }
     }//GEN-LAST:event_pnlPaintMouseReleased
 
@@ -485,6 +516,11 @@ public class frmPaint extends javax.swing.JFrame {
             borracha.y = evt.getY();
             borracha.cor = pnlPaint.getBackground();
             borracha.desenhar(pnlPaint.getGraphics());
+        }else if(tipoFigura == TipoFigura.tfSpray){
+            spray.x =evt.getX();
+            spray.y = evt.getY();
+            spray.cor = pnlCorExterna.getBackground();
+            spray.desenhar(pnlPaint.getGraphics());
         }
     }//GEN-LAST:event_pnlPaintMouseDragged
 
