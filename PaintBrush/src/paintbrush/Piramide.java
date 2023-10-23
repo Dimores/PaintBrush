@@ -12,8 +12,8 @@ import java.awt.Graphics;
  * @author diego
  */
 public class Piramide extends D3 {
-    public int X2;
-    public int Y2;
+    public int xFinal;
+    public int yFinal;
     
     /*
         "O volume da pirâmide é calculado pela multiplicação entre a área da 
@@ -21,8 +21,8 @@ public class Piramide extends D3 {
     */
     @Override
     public float volume(){
-        int base = X2 - super.x;
-        int largura = Y2 - super.y;
+        int base = xFinal - super.x;
+        int largura = yFinal - super.y;
         
         return altura * base * largura / 3;
     }
@@ -32,35 +32,35 @@ public class Piramide extends D3 {
     }
     
     public  float areaTriangulo(float base){
-        return (base + altura)/2;
+        return (base + altura) / 2;
     }
     
     @Override
     public float area(){
-        int base = X2 - super.x;
+        int base = xFinal - super.x;
         
         return areaQuadrado(base) + 4 * areaTriangulo(base);
     }
     
     @Override
     public void desenhar(Graphics g){
-        altura = Y2 - super.y;
+        altura = yFinal - super.y;
         
-        int tamX = X2 - x; 
-        int tamY = Y2 - y;
+        int tamX = xFinal - x; 
+        int tamY = yFinal - y;
         int meioX = x + tamX/2;
         
         int p1X = super.x;
-        int p1Y = Y2;
+        int p1Y = yFinal;
         
-        int p2X = X2;
-        int p2Y = Y2;        
+        int p2X = xFinal;
+        int p2Y = yFinal;        
 
-        int p3X = X2 + tamX/10;
-        int p3Y = Y2 - tamY/10;        
+        int p3X = xFinal + tamX/10;
+        int p3Y = yFinal - tamY/10;        
 
         int p4X = super.x + tamX/10;
-        int p4Y = Y2 - tamY/10;
+        int p4Y = yFinal - tamY/10;
         
         int [] baseX = {p1X, p2X, p3X, p4X};
         int [] baseY = {p1Y, p2Y, p3Y ,p4Y};

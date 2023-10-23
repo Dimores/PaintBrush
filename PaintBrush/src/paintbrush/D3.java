@@ -14,8 +14,8 @@ import java.awt.Graphics;
 public abstract class D3 extends Ponto {
     public Color corInterna;
     public int altura;
-    public boolean showArea = false;
-    public boolean showVolume = false;
+    public boolean mostrarArea = false;
+    public boolean mostrarVolume = false;
 
     
     public abstract float volume();
@@ -23,11 +23,11 @@ public abstract class D3 extends Ponto {
 
     @Override
     public void desenhar(Graphics g) {
-        if (showArea) {
+        if (mostrarArea) {
             g.setColor(cor);
             g.drawString("Área: " + Float.toString(area()), x-20, y-20);
        }
-        if (showVolume) {
+        if (mostrarVolume) {
             g.setColor(cor);
             g.drawString("Volume: " + Float.toString(volume()), x - 10, y - 10);
        }      

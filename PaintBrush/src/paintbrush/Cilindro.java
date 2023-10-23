@@ -13,23 +13,32 @@ import java.awt.Graphics;
  */
 public class Cilindro extends D3 {
     public int raio;
-    public int X2;
-    public int Y2;
+    public int xFinal;
+    public int yFinal;
+    
+    public float areaDoCirculo() {
+      return (float) (Math.PI * Math.pow(raio, 2)); // PI * R ^^ 2
+    }
+    
+    public float perimetroDoCirculo(){
+        return (float) (2 * Math.PI * raio); // 2 * PI * R
+    }
     
     @Override
     public float volume() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        return (float) (altura * 2 * Math.PI * raio);
     }
 
     @Override
     public float area() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        // Duas Areas de circulo mais uma area de um retangulo (perimetro do circulo * altura)
+        return 2 * areaDoCirculo() + perimetroDoCirculo() * altura;
     }
     
     @Override
     public void desenhar(Graphics g) {
-        altura = Y2 - super.y; // Calcula a altura do cilindro com base nas coordenadas Y.
-        int base = X2 - super.x; // Calcula a largura da base do cilindro com base nas coordenadas X.
+        altura = yFinal - super.y; // Calcula a altura do cilindro com base nas coordenadas Y.
+        int base = xFinal - super.x; // Calcula a largura da base do cilindro com base nas coordenadas X.
         super.desenhar(g); // Chama o método desenhar da classe pai (D3).
 
         // Desenho do retângulo lateral

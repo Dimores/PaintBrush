@@ -35,5 +35,10 @@ public class Retangulo extends D2 {
         g.setColor(cor);
         g.drawRect(x, y, base, largura);
     }
+
+    @Override
+    public float comprimento() {
+        return base;
+    }
     
 }

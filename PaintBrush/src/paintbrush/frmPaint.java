@@ -68,8 +68,11 @@ public class frmPaint extends javax.swing.JFrame {
         lblCorExterna = new javax.swing.JLabel();
         lblCorInterna = new javax.swing.JLabel();
         chkPerimetro = new javax.swing.JCheckBox();
+        chkComprimento = new javax.swing.JCheckBox();
+        chkVolume = new javax.swing.JCheckBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         setResizable(false);
 
         btnPincel.setBackground(new java.awt.Color(255, 255, 255));
@@ -199,6 +202,7 @@ public class frmPaint extends javax.swing.JFrame {
         );
 
         pnlPaint.setBackground(new java.awt.Color(255, 255, 255));
+        pnlPaint.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         pnlPaint.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseDragged(java.awt.event.MouseEvent evt) {
                 pnlPaintMouseDragged(evt);
@@ -217,14 +221,14 @@ public class frmPaint extends javax.swing.JFrame {
         pnlPaint.setLayout(pnlPaintLayout);
         pnlPaintLayout.setHorizontalGroup(
             pnlPaintLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGap(0, 860, Short.MAX_VALUE)
         );
         pnlPaintLayout.setVerticalGroup(
             pnlPaintLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGap(0, 581, Short.MAX_VALUE)
         );
 
-        chkArea.setText("Exibir Área");
+        chkArea.setText("Área");
         chkArea.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 chkAreaActionPerformed(evt);
@@ -270,28 +274,27 @@ public class frmPaint extends javax.swing.JFrame {
         lblCorExterna.setBackground(new java.awt.Color(0, 0, 0));
         lblCorExterna.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
         lblCorExterna.setForeground(new java.awt.Color(0, 0, 0));
-        lblCorExterna.setText("Cor externa");
+        lblCorExterna.setText("Cor 1");
 
         lblCorInterna.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
         lblCorInterna.setForeground(new java.awt.Color(0, 0, 0));
-        lblCorInterna.setText("Cor interna");
+        lblCorInterna.setText("Cor 2");
 
         javax.swing.GroupLayout pnlCoresLayout = new javax.swing.GroupLayout(pnlCores);
         pnlCores.setLayout(pnlCoresLayout);
         pnlCoresLayout.setHorizontalGroup(
             pnlCoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlCoresLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(pnlCoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(pnlCoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(pnlCoresLayout.createSequentialGroup()
                         .addComponent(pnlCorExterna, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(lblCorExterna))
+                        .addComponent(lblCorExterna, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(pnlCoresLayout.createSequentialGroup()
                         .addComponent(pnlCorInterna, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(lblCorInterna)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(lblCorInterna, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         pnlCoresLayout.setVerticalGroup(
             pnlCoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -307,7 +310,11 @@ public class frmPaint extends javax.swing.JFrame {
                 .addContainerGap(14, Short.MAX_VALUE))
         );
 
-        chkPerimetro.setText("Exibir Perímetro");
+        chkPerimetro.setText("Perímetro");
+
+        chkComprimento.setText("Comp");
+
+        chkVolume.setText("Volume");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -317,38 +324,46 @@ public class frmPaint extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(pnlCores, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGap(24, 24, 24))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(chkPerimetro)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                        .addComponent(jColorChooser, javax.swing.GroupLayout.PREFERRED_SIZE, 870, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(pnlCores, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(12, 12, 12))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(chkArea)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(pnlInteracao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(pnlPaint, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(chkPerimetro, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(chkArea)
+                            .addComponent(chkComprimento)
+                            .addComponent(chkVolume, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(pnlPaint, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jColorChooser, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(pnlPaint, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jColorChooser, javax.swing.GroupLayout.PREFERRED_SIZE, 291, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(pnlInteracao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(chkArea)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(chkPerimetro)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(pnlCores, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(pnlInteracao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(chkComprimento)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(chkArea)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(chkPerimetro)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(chkVolume)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(pnlCores, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(15, 15, 15))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(pnlPaint, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jColorChooser, javax.swing.GroupLayout.PREFERRED_SIZE, 285, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
 
@@ -466,6 +481,7 @@ public class frmPaint extends javax.swing.JFrame {
             retangulo.largura = evt.getY() - retangulo.y;
             retangulo.exibirArea = chkArea.isSelected();
             retangulo.exibirPerimetro = chkPerimetro.isSelected();
+            retangulo.exibirComprimento = chkComprimento.isSelected();
             
             retangulo.corInterna = pnlCorInterna.getBackground();
             retangulo.cor = pnlCorExterna.getBackground();
@@ -474,6 +490,7 @@ public class frmPaint extends javax.swing.JFrame {
             reta.cor = pnlCorExterna.getBackground();
             reta.xFinal = evt.getX();
             reta.yFinal = evt.getY();
+            reta.mostrarComprimento = chkComprimento.isSelected();
             reta.desenhar(pnlPaint.getGraphics());
         }else if(tipoFigura == TipoFigura.tfCirculo){
             circulo.raio = (int) Math.sqrt(Math.pow(evt.getX() - circulo.x, 2) + Math.pow(evt.getY() - circulo.y, 2));
@@ -483,22 +500,26 @@ public class frmPaint extends javax.swing.JFrame {
             circulo.cor = pnlCorExterna.getBackground();
             circulo.desenhar(pnlPaint.getGraphics());
         }else if(tipoFigura == TipoFigura.tfCilindro){
-            cilindro.X2 = evt.getX();
-            cilindro.Y2 = evt.getY();
+            cilindro.xFinal = evt.getX();
+            cilindro.yFinal = evt.getY();
 
             cilindro.cor = pnlCorExterna.getBackground();
             cilindro.corInterna = pnlCorInterna.getBackground();
 
             cilindro.raio = (evt.getX()-cilindro.x)/2;
-
+            
+            cilindro.mostrarArea = chkArea.isSelected();
+            cilindro.mostrarVolume = chkVolume.isSelected();
             cilindro.desenhar(pnlPaint.getGraphics());
         }else if(tipoFigura == TipoFigura.tfPiramide){
-            piramide.X2 = evt.getX();
-            piramide.Y2 = evt.getY();
+            piramide.xFinal = evt.getX();
+            piramide.yFinal = evt.getY();
 
             piramide.cor = pnlCorExterna.getBackground();
             piramide.corInterna = pnlCorInterna.getBackground();
 
+            piramide.mostrarArea = chkArea.isSelected();
+            piramide.mostrarVolume = chkVolume.isSelected();
             piramide.desenhar(pnlPaint.getGraphics());
         }
     }//GEN-LAST:event_pnlPaintMouseReleased
@@ -573,7 +594,9 @@ public class frmPaint extends javax.swing.JFrame {
     private javax.swing.JButton btnRetangulo;
     private javax.swing.JButton btnSpray;
     private javax.swing.JCheckBox chkArea;
+    private javax.swing.JCheckBox chkComprimento;
     private javax.swing.JCheckBox chkPerimetro;
+    private javax.swing.JCheckBox chkVolume;
     private javax.swing.JColorChooser jColorChooser;
     private javax.swing.JLabel lblCorExterna;
     private javax.swing.JLabel lblCorInterna;

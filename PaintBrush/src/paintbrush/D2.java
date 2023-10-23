@@ -15,9 +15,11 @@ public abstract class D2 extends Ponto {
     public Color corInterna;
     public boolean exibirArea = false;     
     public boolean exibirPerimetro = false;
+    public boolean exibirComprimento = false;
     
     public abstract float area(); // Função abstrata para calcular area
     public abstract float perimetro(); // Função abstrata para calcular o perimetro
+    public abstract float comprimento(); // Função abstrata para calcular o comprimento
     
     @Override
     public void desenhar(Graphics g){
@@ -26,6 +28,9 @@ public abstract class D2 extends Ponto {
         }
         if(exibirPerimetro){
             g.drawString("Perímetro = " + Float.toString(perimetro()), x - 30, y - 30); // Amarramento tardio
+        }
+        if(exibirComprimento){
+            g.drawString("Comprimento = " + Float.toString(comprimento()), x - 40, y - 40); // Amarramento tardio
         }
     }
     

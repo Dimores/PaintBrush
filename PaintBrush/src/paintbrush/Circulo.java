@@ -33,5 +33,10 @@ public class Circulo extends D2 {
         g.drawOval(x - raio, y - raio, 2 * raio, 2 * raio);
         super.desenhar(g);
     }
+
+    @Override
+    public float comprimento() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
     
 }
