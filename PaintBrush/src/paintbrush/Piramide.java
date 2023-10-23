@@ -56,11 +56,11 @@ public class Piramide extends D3 {
         int p2X = xFinal;
         int p2Y = yFinal;        
 
-        int p3X = xFinal + tamX/10;
-        int p3Y = yFinal - tamY/10;        
+        int p3X = xFinal + tamX / 10;
+        int p3Y = yFinal - tamY / 10;        
 
-        int p4X = super.x + tamX/10;
-        int p4Y = yFinal - tamY/10;
+        int p4X = super.x + tamX / 10;
+        int p4Y = yFinal - tamY / 10;
         
         int [] baseX = {p1X, p2X, p3X, p4X};
         int [] baseY = {p1Y, p2Y, p3Y ,p4Y};
